@@ -11,4 +11,5 @@ Back-end:
   PHP, SimBASIC
 
 Izmantotie avoti
+
 Uzstādīšanas instrukcijas
