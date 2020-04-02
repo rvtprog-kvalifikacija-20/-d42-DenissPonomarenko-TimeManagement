@@ -1,0 +1,86 @@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    
+    <script type= "text/javascript">
+        $(function(){
+            //alert('hello');
+            Swal.fire({
+                'title': 'Good job!',
+                'text': 'You have successfully registered',
+                'icon': "success",
+                'type': 'success'
+            })
+        });
+    </script>
+
+oops
+
+    <script type= "text/javascript">
+        $(function(){
+            //alert('hello');
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!'
+            })
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <?php
+        
+       
+            if(isset($_POST['login'])){
+                
+                $email = $_POST['email'];
+                $password = md5( $_POST['password'] );
+                $link = mysqli_connect(
+                    'localhost',  /* Хост, к которому мы подключаемся */
+                    'root',       /* Имя пользователя */
+                    'usbw',   /* Используемый пароль */
+                    'te');     /* База данных для запросов по умолчанию */
+
+                if (!$link) {
+                printf("Невозможно подключиться к базе данных. Код ошибки: %s\n", mysqli_connect_error());
+                exit;
+                }
+                
+                $sql = "SELECT * FROM user WHERE email = '" . $email . "' AND pass = '" . $password . "';";
+                if ($result = mysqli_query($link, $sql)){
+
+                    session_start();
+                    $_SESSION["logged"] = "logged";
+                    header('Location: index.php');
+                    while( $row = mysqli_fetch_assoc($result) ){
+                        $_SESSION["user_id"] = $row['id'];
+                        $_SESSION["user_name"] = $row['name'];
+                        $_SESSION["user_phone"] = $row['phone_number'];
+                        $_SESSION["user_email"] = $row['email'];
+                    }
+                }
+
+            }
+        ?>  
+	</div>

@@ -1,0 +1,248 @@
+body {
+    background: url(../img/background/background.jpg) no-repeat;
+    background-size: cover;
+}
+body, button, input {
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+/*****************************Navigation***************************************/
+.topnav {
+    margin-left: 35%;
+    overflow: hidden;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+
+/* Add an active class to highlight the current page */
+.topnav a:hover {
+    text-decoration: underline;
+}
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/*****************************Navigation***************************************/
+
+.container{
+    overflow: none;
+}
+
+.login{
+    padding-top: 5%;
+}
+
+
+.login{
+    display: block;
+}
+
+.footer{
+    margin-top: 17%;
+    text-align: center;
+}
+.footer a{
+    padding-right: 10px;
+}
+
+a {
+    color: #0a0a0a;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.columns{
+    justify-content: center;
+    margin-bottom: 80px;
+    margin-left: 80px;
+    margin-top: 80px;
+    margin-right: 80px;
+}
+
+.title{
+    font-size: 48px;
+    color: #363636;
+    font-weight: 600;
+    line-height: 1.125;
+}
+.title-2{
+    font-size: 24px;
+    color: #363636;
+    font-weight: 600;
+    line-height: 1.125;
+}
+.subtitle{
+    font-size: 24px;
+}
+.box{
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    display: block;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+::placeholder{
+    color: #363636;
+}
+
+.data-entry{
+    border-radius: 4px;
+    padding: 20px 40px 20px 24px;
+    position: relative;
+}
+
+.label{
+    margin-bottom: 12px;
+}
+
+
+.control{
+    box-sizing: border-box;
+    clear: both;
+    font-size: 16px;
+    position: relative;
+    text-align: left;
+}
+.is-half{
+    width: 30%;
+}
+.input, .textarea {
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    max-width: 100%;
+    width: 90%;
+}
+
+.input, .textarea, .select select {
+    background-color: white;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+}
+
+
+.button, .input{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 16px;
+    height: 36px;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 5px;
+    position: relative;
+    vertical-align: top;
+}
+
+.button {
+    background-color: white;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+.center{
+    text-align: center;
+}
+
+.column{
+    margin-bottom: 32px;
+}
+
+.columns{
+    display: flex;
+}
+
+@media screen and (max-width: 1281px){
+    .columns{
+        display: block;
+    }
+    .box{
+        width: 50%;
+        padding: 20px;
+    }
+    .is-half{
+        width: 50%
+    }
+    .nav{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1682px){
+    .columns{
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
+    .is-half{
+        width: auto;
+    }
+    .box{
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+    }
+    .topnav{
+        margin-left: 25%;
+    }
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 839px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 839px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+    .topnav{
+        margin: auto;
+    }
+
+}
