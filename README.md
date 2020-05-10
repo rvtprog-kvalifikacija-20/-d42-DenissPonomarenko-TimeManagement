@@ -19,4 +19,4 @@ Izmantotie avoti
     
 
 Uzstādīšanas instrukcijas
-    Jākopē root mape un jāiegulst lokālajā serverī. Piemēram, ja Jus izmantojat usbwebserver, aizstājiet root mapi.  
+    Jākopē projektu un jāiegulst lokālajā serverī. Piemēram, ja Jus izmantojat usbwebserver, aizstājiet root mapi.  
