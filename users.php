@@ -1,17 +1,3 @@
-<?php 
-    include_once("functions/functions.php");
-    check_session();
-
-    if( isset( $_GET['s'] ) ){
-        if( isset( $_GET['u'] ) ){
-            $_SESSION['u_id'] = $_GET['u'];
-        }
-        change_state( $_GET['s'] );
-        header("Location: index.php");
-    }
-?>
-
-
 <div class="container mt-5 mb-5">
     <h3 class="my-0 font-weight-normal mb-3">Пользователи</h3>
     <?php 

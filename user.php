@@ -1,19 +1,6 @@
-<?php 
-    include_once("functions/functions.php");
-    check_session();
-
-    if( isset( $_GET['s'] ) ){
-        if( isset( $_GET['u'] ) ){
-            $_SESSION['u_id'] = $_GET['u'];
-        }
-        change_state( $_GET['s'] );
-        header("Location: index.php");
-    }
-?>
-
 <div class="container mt-5 mb-5">
     <?php 
-        $response_xml = f_get_user_data();
+        $response_xml = f_get_user_data( $_GET['u'] );
         $user = $response_xml->{'body'}->{'user'};
     ?>
     <div class="card mb-4 shadow-sm mt-3">
@@ -21,8 +8,8 @@
             <h4 class="my-0 font-weight-normal"><?php echo $user->u_lastname ." ". $user->u_firstname ?></h4>
         </div>
         <div class="card-body">
-            <img src="..." class="col-6" alt="..." style="width: 170px">
-            <div class="col-21">
+            <img src="<?php base64_to_jpeg( $user->picture, 'img\user_logo.png') ?>" class="col-6" style="width: 170px">
+            <div class="col-21 ">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" title="Логин"><?php echo $user->u_login                   ?></li>
                     <li class="list-group-item" title="Пол"><?php echo $user->u_gender                    ?></li>

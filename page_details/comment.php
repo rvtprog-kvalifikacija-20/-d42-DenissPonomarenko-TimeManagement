@@ -1,9 +1,11 @@
 <?php 
-    include_once("functions/functions.php");
+    include_once("../functions/functions.php");
     check_session();
 
     if( isset( $_GET['write'] ) ){
+
         f_za_make_note( $_SESSION['o_num'], $_GET['text'], $_GET['type'], $_GET['time']);
+        header("Location: /");
     }
 ?>
 

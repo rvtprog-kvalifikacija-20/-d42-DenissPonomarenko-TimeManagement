@@ -1,12 +1,19 @@
 <?php include_once("page_details/head.php") ?>
-<title>Вход в систему</title>
 <div class="container login-container" style="margin-top: 10%">
     <div class="row mt-5">
         <div class="col-md-6 login-form-1">
             <h3 class="text-left ml-5 mb-0">Вход в систему</h3>
             <form action="check.php" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="login" placeholder="Логин" value="" required/>
+                    <input type="text" class="form-control" name="login" 
+                        <?php 
+                            if( isset( $_SESSION['username'] ) ){
+                                echo 'value="'.$_SESSION['username'].'"';
+                            }else{ 
+                                echo 'placeholder="Логин"'; 
+                            }
+                        ?> 
+                    required/>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" placeholder="Пароль" value="" required/>

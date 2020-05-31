@@ -1,4 +1,13 @@
-<div class="card-body">
+<?php
+    include_once("../functions/functions.php");
+    $response_xml = f_za_get_object_notes();
+    $notes = $response_xml->{'body'}->{'note'}; 
+    if( !isset( $notes->{'date'} ) ){
+        return 0;
+    }else{
+        
+?>
+<hr>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -10,11 +19,6 @@
     </thead>
     <tbody>
     <?php 
-        include_once("functions/functions.php");
-        check_session();
-        $response_xml   = f_za_get_object_notes( $_SESSION['o_num'] );
-        echo $response_xml;
-        $notes = $response_xml->{'body'}->note;
         foreach( $notes as $k => $note ) :
     ?>
         <tr>
@@ -26,4 +30,4 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-</div>
+        <?php } ?>
